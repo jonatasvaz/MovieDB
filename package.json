@@ -2,22 +2,52 @@
   "name": "movie",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "vite",
+    "test": "jest",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "jest": "^29.5.0",
     "react": "^18.2.0",
+    "react-content-loader": "^6.2.1",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.9.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/preset-react": "^7.18.6",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
+    "babel-jest": "^29.5.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "jsdom": "^22.0.0",
     "vite": "^4.2.0"
+  },
+  "jest": {
+    "testEnvironment": "jest-environment-jsdom",
+    "setupFilesAfterEnv": [
+      "<rootDir>/setup-tests.js"
+    ],
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.{js,ts,jsx,tsx}",
+      "!<rootDir>/**/*Type.{js,ts,jsx,tsx}",
+      "!<rootDir>/**/*.styled.{js,ts,jsx,tsx}",
+      "!<rootDir>/**/icons/**",
+      "!<rootDir>/**/App.tsx",
+      "!<rootDir>/**/main.tsx",
+      "!<rootDir>/**/vite-env.d.ts",
+      "!<rootDir>/**/index.ts",
+      "!<rootDir>/**/*.enum.{js,ts,jsx,tsx}"
+    ]
   }
 }
